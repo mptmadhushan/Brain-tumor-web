@@ -15,7 +15,7 @@ function Detection() {
 
   const handleSubmit = async () => {
     const formData = new FormData();
-    formData.append("DenoisedImage", selectedImage);
+    formData.append("DenoisedImage", `store/denoised/${selectedImage.name}`);
     try {
       const response = await axios({
         method: "post",
@@ -23,8 +23,8 @@ function Detection() {
         data: formData,
         headers: { "Content-Type": "multipart/form-data" },
       });
-      console.log(response);
-      setResponse(response);
+      console.log(response.data);
+      setResponse(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -102,19 +102,16 @@ function Detection() {
 
               <div className="res w-full">
                 <div className="w-full mb-3 text-[14pt] border border-gray-300 rounded-md">
-                  <span className="text-green-700 font-semibold">12.78</span>
-                </div>
-                <div>
-                  <span>Area</span>
+                  <span className="text-green-700 font-semibold">{respo?.PositivePercentage}</span>
                 </div>
               </div>
 
               <div className="res w-full">
                 <div className="w-full mb-3 text-[14pt] border border-gray-300 rounded-md">
-                  <span className="text-green-700 font-semibold">Small</span>
+                  <span className="text-green-700 font-semibold">{respo?.TumorExistence}</span>
                 </div>
                 <div>
-                  <span>Size</span>
+                  <span>TumorExistence</span>
                 </div>
               </div>
             </div>
