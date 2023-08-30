@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import SidePanel from "../components/SidePanel";
-
+//detection
 function Detection() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [respo, setResponse] = useState(null);

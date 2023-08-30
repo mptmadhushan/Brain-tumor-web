@@ -3,7 +3,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
 import SidePanel from "../components/SidePanel";
-
+//identification
 function Classification() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [respo, setResponse] = useState(null);
@@ -15,11 +15,11 @@ function Classification() {
 
   const handleSubmit = async () => {
     const formData = new FormData();
-    formData.append("DenoisedImage", selectedImage);
+    formData.append("DenoisedImage", `store/denoised/${selectedImage}`);
     try {
       const response = await axios({
         method: "post",
-        url: "http://127.0.0.1:5000/detection",
+        url: "http://127.0.0.1:5000/identification",
         data: formData,
         headers: { "Content-Type": "multipart/form-data" },
       });

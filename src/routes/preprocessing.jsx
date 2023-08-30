@@ -3,7 +3,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
 import SidePanel from "../components/SidePanel";
-
+//denoise
 function Preprocessing() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [respo, setResponse] = useState(null);
