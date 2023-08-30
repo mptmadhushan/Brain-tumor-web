@@ -103,38 +103,40 @@ function Classification() {
               </div>
             </div>
 
-            <div className="pre-process text-center p-2 w-full mb-5">
-              <div className="p-5 mx-auto mt-10 flex flex-col w-full space-y-5 text-center justify-center ">
-                <div className="res w-full flex flex-row space-x-5 justify-between">
-                  <div className=" mb-3 text-[14pt] border border-gray-300 rounded-md w-[70%]">
-                    <span className="text-green-700 font-semibold p-2">
-                      {respClassification}
-                    </span>
+            {respo && (
+              <div className="pre-process text-center p-2 w-full mb-5">
+                <div className="p-5 mx-auto mt-10 flex flex-col w-full space-y-5 text-center justify-center ">
+                  <div className="res w-full flex flex-row space-x-5 justify-between">
+                    <div className=" mb-3 text-[14pt] border border-gray-300 rounded-md w-[70%]">
+                      <span className="text-green-700 font-semibold p-2">
+                        {respClassification}
+                      </span>
+                    </div>
+                    <div>{/* <span className="text-red-500">%</span> */}</div>
                   </div>
-                  <div>{/* <span className="text-red-500">%</span> */}</div>
-                </div>
 
-                <div className="res w-full flex flex-row space-x-5 justify-between">
-                  <div className=" mb-3 text-[14pt] border border-gray-300 rounded-md w-[70%]">
-                    <span className="text-green-700 font-semibold p-2">
-                      {respo?.Identification?.ConfidentClass}
-                    </span>
+                  <div className="res w-full flex flex-row space-x-5 justify-between">
+                    <div className=" mb-3 text-[14pt] border border-gray-300 rounded-md w-[70%]">
+                      <span className="text-green-700 font-semibold p-2">
+                        {respo?.Identification?.ConfidentClass}
+                      </span>
+                    </div>
+                    <div>{/* <span className="text-red-500">%</span> */}</div>
                   </div>
-                  <div>{/* <span className="text-red-500">%</span> */}</div>
-                </div>
 
-                <div className="res w-full flex flex-row space-x-5 justify-between">
-                  <div className=" mb-3 text-[14pt] border border-gray-300 rounded-md w-[70%]">
-                    <span className="text-green-700 font-semibold p-2">
-                      Survival Rate - {respo?.SurvivalRate}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-red-500">%</span>
+                  <div className="res w-full flex flex-row space-x-5 justify-between">
+                    <div className=" mb-3 text-[14pt] border border-gray-300 rounded-md w-[70%]">
+                      <span className="text-green-700 font-semibold p-2">
+                        Survival Rate - {respo?.SurvivalRate}
+                      </span>
+                    </div>
+                    <div>
+                      <span className="text-red-500">%</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
