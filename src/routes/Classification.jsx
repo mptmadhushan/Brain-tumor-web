@@ -15,7 +15,7 @@ function Classification() {
 
   const handleSubmit = async () => {
     const formData = new FormData();
-    formData.append("DenoisedImage", `store/denoised/${selectedImage}`);
+    formData.append("DenoisedImage", `store/denoised/${selectedImage.name}`);
     try {
       const response = await axios({
         method: "post",
