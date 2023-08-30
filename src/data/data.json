@@ -1,0 +1,28 @@
+{
+  "patients": [
+    {
+      "name": "John Doe",
+      "gender": "Male",
+      "diabetes": true,
+      "cholesterol": false
+    },
+    {
+      "name": "Jane Smith",
+      "gender": "Female",
+      "diabetes": false,
+      "cholesterol": true
+    },
+    {
+      "name": "Mike Johnson",
+      "gender": "Male",
+      "diabetes": true,
+      "cholesterol": true
+    },
+    {
+      "name": "Sarah Davis",
+      "gender": "Female",
+      "diabetes": false,
+      "cholesterol": false
+    }
+  ]
+}
