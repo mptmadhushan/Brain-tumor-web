@@ -7,6 +7,7 @@ import SidePanel from "../components/SidePanel";
 function Classification() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [respo, setResponse] = useState(null);
+  const [respClassification, setRespClassification] = useState(null);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -25,6 +26,7 @@ function Classification() {
       });
       console.log(response);
       setResponse(response.data);
+      getHighestCategory(response.data.Identification.Type2Probability);
     } catch (error) {
       console.log(error);
     }
@@ -106,7 +108,7 @@ function Classification() {
                 <div className="res w-full flex flex-row space-x-5 justify-between">
                   <div className=" mb-3 text-[14pt] border border-gray-300 rounded-md w-[70%]">
                     <span className="text-green-700 font-semibold p-2">
-                      {respo && getHighestCategory}
+                      {respClassification}
                     </span>
                   </div>
                   <div>{/* <span className="text-red-500">%</span> */}</div>
