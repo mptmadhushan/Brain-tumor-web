@@ -33,6 +33,7 @@ function Classification() {
     let highestPercentage = 0;
     let highestCategory = "";
     const data = respo.Identification.Type2Probability;
+    console.log("🚀 ~ file: Classification.jsx:36 ~ getHighestCategory ~ data:", data)
 
     for (const category in data) {
       const percentage = parseFloat(data[category]);
@@ -43,6 +44,7 @@ function Classification() {
       }
     }
     setRespClassification(highestCategory);
+    console.log("🚀 ~ file: Classification.jsx:47 ~ getHighestCategory ~ highestCategory:", highestCategory)
     return highestCategory;
   };
   return (
