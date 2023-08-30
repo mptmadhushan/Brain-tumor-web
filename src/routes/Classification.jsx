@@ -29,7 +29,8 @@ function Classification() {
       console.log(error);
     }
   };
-  function getHighestCategory() {
+
+  const getHighestCategory = () => {
     let highestPercentage = 0;
     let highestCategory = "";
     const data = respo.Identification.Type2Probability;
@@ -43,15 +44,8 @@ function Classification() {
       }
     }
 
-    return {
-      category: highestCategory,
-      percentage: highestPercentage,
-    };
-  }
-  const highestData = getHighestCategory(data);
-  console.log(
-    `The highest percentage is ${highestData.percentage}% for ${highestData.category}.`
-  );
+    return highestCategory;
+  };
   <div className="main-body w-full bg-slate-100 h-screen">
     <div className="main-body-container h-full w-full flex flex-row">
       <div>
@@ -112,7 +106,7 @@ function Classification() {
                 <div className="res w-full flex flex-row space-x-5 justify-between">
                   <div className=" mb-3 text-[14pt] border border-gray-300 rounded-md w-[70%]">
                     <span className="text-green-700 font-semibold p-2">
-                      Benign
+                      {respo && getHighestCategory}
                     </span>
                   </div>
                   <div>{/* <span className="text-red-500">%</span> */}</div>
